@@ -1,4 +1,5 @@
 import java.io.*;
+import java.math.BigDecimal;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -8,11 +9,11 @@ public class Main {
             arr[i-1] = i;
         }
         int l = Integer.parseInt(br.readLine());
-        long sum = 0;
+        BigDecimal sum = BigDecimal.ZERO;
         String s = br.readLine();
         for(int i=0; i<l; i++) {
-            sum += (arr[s.charAt(i)-'a']*(long)Math.pow(31, i));
+            sum = sum.add(new BigDecimal("31").pow(i).multiply(new BigDecimal(arr[s.charAt(i)-'a'])));
         }
-        System.out.println(sum);
+        System.out.println(sum.remainder(new BigDecimal("1234567891")));
     }
 }

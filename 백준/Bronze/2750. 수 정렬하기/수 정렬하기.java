@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -6,15 +7,7 @@ public class Main {
         int n = sc.nextInt();
         int[] arr = new int[n];
         for(int i=0; i<n; i++) arr[i] = sc.nextInt();
-        for(int i=0; i<n; i++) {
-            for(int j=i+1; j<n; j++) {
-                if(arr[j] < arr[i]) {
-                    int tmp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = tmp;
-                }
-            }
-        }
+        Arrays.sort(arr);
         for(int x : arr) System.out.println(x);
     }
 }

@@ -4,6 +4,9 @@ import java.io.InputStreamReader;
 import java.math.BigInteger;
 
 public class Main {
+
+    static BigInteger[] facto = new BigInteger[550];
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
@@ -20,8 +23,8 @@ public class Main {
     }
 
     static BigInteger factorial(int n) {
-        if(n==0) return BigInteger.ONE;
-        else if(n==1) return BigInteger.ONE;
-        else return BigInteger.valueOf(n).multiply(factorial(n-1));
+        if(n==0) return facto[n] = BigInteger.ONE;
+        else if(n==1) return facto[n] = BigInteger.ONE;
+        else return facto[n] = BigInteger.valueOf(n).multiply(factorial(n-1));
     }
 }

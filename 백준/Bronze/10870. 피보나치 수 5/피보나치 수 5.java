@@ -11,9 +11,8 @@ public class Main {
     }
 
     static int fibonacci(int n) {
-        if(n==0) return fibo[n]=0;
-        else if(n==1) return fibo[n]=1;
-        else if(n==2) return fibo[n]=1;
+        if(fibo[n] > 0 || n==0) return fibo[n];
+        if(n==1 || n==2) return fibo[n]=1;
         else return fibo[n]=fibonacci(n-1)+fibonacci(n-2);
     }
 }
